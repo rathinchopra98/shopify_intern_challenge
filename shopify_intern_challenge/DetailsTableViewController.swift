@@ -111,7 +111,7 @@ class DetailsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return productTitles.count
+        return productTitles.count + 1
     }
 
     
@@ -131,8 +131,8 @@ class DetailsTableViewController: UITableViewController {
             cell.quantity.text = ""
             cell.textView.text = "\(bodyHtml!)"
         }else{
-            cell.title.text = productTitles[indexPath.row]
-            cell.quantity.text = "Total Quantity: " + String(quantity[indexPath.row])
+            cell.title.text = productTitles[indexPath.row - 1]
+            cell.quantity.text = "Total Quantity: " + String(quantity[indexPath.row - 1])
             cell.collectionTitle.text = collectionTitle
             cell.productImageView.image = image
             cell.textView.text = ""
